@@ -1,0 +1,93 @@
+import React, { Fragment, useState } from "react";
+import {Card, Image, Col, Modal} from "react-bootstrap"
+// import {Link} from "react-router-dom"
+import debug from "sabio-debug";
+import PropTypes from "prop-types";
+
+import "./consequence.css";
+
+
+const _logger = debug.extend("consPage");
+
+
+
+function ConsequencesCard (props){  
+
+    const aCons = props.consequence;
+    const aUser=props.currentUser
+    _logger("ActorId------->", aCons.actorId.id)
+    _logger("aUser--------->", aUser)
+   
+    
+    const onLocalEditClicked = (e) =>{
+        props.onEditClicked(aCons, e)
+    };
+
+    const[showModal, setShowModal] = useState(false);
+
+    const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
+
+    return(
+        <Fragment>
+            <Col className="col-4">
+                <Card className="mb-4 shadow-lg cons-card">
+                    <Image className="img-card-top" src="https://tinyurl.com/3zr5rm66"></Image>
+                    <Card.Body className="consequence-text text-center">
+                        <h3><strong>Consequence:</strong></h3>
+                        <div>{aCons.name}</div>
+                        <div>
+                            <button className="btn btn-warning" style={{marginTop: 15}} onClick={handleShow}>Details</button>
+                        </div>
+                            {aUser.currentUser.id === aCons.createdBy.id ? <button className="btn btn-primary" style={{marginTop: 15}} onClick={onLocalEditClicked}>Edit</button> : ""}
+                    </Card.Body>    
+                </Card>
+            </Col>
+
+            <Modal 
+            show={showModal}
+            onHide={handleClose}
+            backdrop="static"
+            keyboard={false}
+            >
+                <Modal.Header closeButton >
+                    <Modal.Title>Consequence Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>Actor: {aCons.actorId.name}</p>
+                    <p>Zone: {aCons.zoneId.name}</p>
+                    <p>Description: {aCons.description}</p>
+                </Modal.Body>
+            </Modal>
+        </Fragment>
+    )
+};
+
+ConsequencesCard.propTypes = {
+    consequence: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        consequenceTypeId: PropTypes.number,
+        actorId: PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+    }).isRequired,
+        zoneId: PropTypes.shape({
+            id: PropTypes.number,
+            name: PropTypes.string,
+        }),
+        createdBy: PropTypes.shape({
+            id: PropTypes.number.isRequired,
+        }),
+    }).isRequired,
+    onEditClicked: PropTypes.func,
+    currentUser: PropTypes.shape({
+        currentUser:PropTypes.shape({
+            id: PropTypes.number.isRequired,
+        }).isRequired
+    }).isRequired
+};
+
+
+
+export default ConsequencesCard;
