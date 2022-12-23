@@ -1,0 +1,24 @@
+ALTER PROC	[dbo].[Consequences_Update_IsDelete_ById]
+		   @Id int
+AS
+
+/* ----Test Code -----
+
+	DECLARE @Id int = 4
+
+	Execute dbo.Consequences_Update_IsDelete_ById 
+	      @Id
+
+*/
+
+BEGIN
+
+   UPDATE [dbo].[Consequences]
+
+   SET 
+		  [isDeleted] = 1
+		 ,[DateModified] = GETUTCDATE()
+
+   WHERE  Id = @Id
+
+ END
