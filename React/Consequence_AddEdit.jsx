@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "assets/images/brand/logo/immersed-spiral-logo.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import consequenceService from "services/consequenceService";
-import debug from "sabio-debug";
 import toastr from "toastr";
 import zonesService from "services/zonesServices";
 import lookUpService from "services/lookUpService";
