@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import debug from "sabio-debug";
 import { Image } from "react-bootstrap"
 import "./traceabilityeventcard.css";
 import PropTypes from "prop-types";
