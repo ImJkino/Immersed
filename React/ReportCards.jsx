@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { ListGroup } from "react-bootstrap";
 import PropTypes from "prop-types"
-import debug from "sabio-debug";
 import "./traceabilityeventcard.css";
 
 const _logger = debug.extend("eventsard")
