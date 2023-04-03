@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import {Card, Image, Col, Modal} from "react-bootstrap"
 // import {Link} from "react-router-dom"
-import debug from "sabio-debug";
 import PropTypes from "prop-types";
 
 import "./consequence.css";
