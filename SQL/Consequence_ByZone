@@ -1,25 +1,5 @@
-USE [Immersed]
-GO
-/****** Object:  StoredProcedure [dbo].[Consequence_Select_ByZoneId]    Script Date: 12/18/2022 6:40:35 AM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
---=============================================
- --Author: <Aquino, Joseph>
- --Create date: <2022-11-18>
- --Description: <SelectByZoneId for Consequences >
- --Code Reviewer:
- 
-
- --MODIFIED BY: <Author>
- --MODIFIED DATE: <2022-10-26>
- --Code Reviewer: 
- --Note: 
- --=============================================
 ALTER proc [dbo].[Consequence_Select_ByZoneId]
-		@ZoneId int
-	   
+		@ZoneId int   
 	   
 AS
 
@@ -98,6 +78,4 @@ BEGIN
 	
 	 WHERE c.ZoneId = @ZoneId 
 		
-		
-
 END
