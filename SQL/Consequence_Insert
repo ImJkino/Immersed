@@ -1,12 +1,12 @@
 ALTER PROC [dbo].[Consequences_Insert]
-			@Name nvarchar(100)
+	    @Name nvarchar(100)
            ,@Description nvarchar(500)
            ,@ConsequenceTypeId int
            ,@ActorId int
            ,@ZoneId int = null
            ,@CreatedBy int
            ,@ModifiedBy int
-		   ,@Id int OUTPUT
+	   ,@Id int OUTPUT
 
 
 AS
@@ -24,20 +24,20 @@ AS
 
    Execute dbo.Consequences_Insert 
             @Name 
-		   ,@Description 
-		   ,@ConsequenceTypeId 
-		   ,@ActorId 
-		   ,@ZoneId 
-		   ,@CreatedBy 
-		   ,@ModifiedBy 
-		   ,@Id OUTPUT
+	   ,@Description 
+	   ,@ConsequenceTypeId 
+	   ,@ActorId 
+	   ,@ZoneId 
+	   ,@CreatedBy 
+	   ,@ModifiedBy 
+	   ,@Id OUTPUT
 
 */
 
 BEGIN
 
 	 INSERT INTO 
-		    [dbo].[Consequences]
+	   [dbo].[Consequences]
            ([Name]
            ,[Description]
            ,[ConsequenceTypeId]
