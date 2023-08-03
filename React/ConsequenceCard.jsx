@@ -9,9 +9,6 @@ function ConsequencesCard (props){
 
     const aCons = props.consequence;
     const aUser=props.currentUser
-    _logger("ActorId------->", aCons.actorId.id)
-    _logger("aUser--------->", aUser)
-   
     
     const onLocalEditClicked = (e) =>{
         props.onEditClicked(aCons, e)
