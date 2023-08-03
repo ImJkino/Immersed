@@ -3,8 +3,6 @@ import consequnceService from "../../services/consequenceService";
 import { useNavigate } from "react-router-dom";
 import {Row} from "react-bootstrap"
 import ConsequenceCard from "./ConsequenceCard";
-import debug from "sabio-debug";
-
 import 'rc-pagination/assets/index.css';
 import locale from "rc-pagination/lib/locale/en_US"
 import Pagination from "rc-pagination";
