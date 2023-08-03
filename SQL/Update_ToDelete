@@ -16,8 +16,8 @@ BEGIN
    UPDATE [dbo].[Consequences]
 
    SET 
-		  [isDeleted] = 1
-		 ,[DateModified] = GETUTCDATE()
+	  [isDeleted] = 1
+	 ,[DateModified] = GETUTCDATE()
 
    WHERE  Id = @Id
 
