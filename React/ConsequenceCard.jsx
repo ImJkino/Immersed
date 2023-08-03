@@ -2,13 +2,8 @@ import React, { Fragment, useState } from "react";
 import {Card, Image, Col, Modal} from "react-bootstrap"
 // import {Link} from "react-router-dom"
 import PropTypes from "prop-types";
-
 import "./consequence.css";
-
-
 const _logger = debug.extend("consPage");
-
-
 
 function ConsequencesCard (props){  
 
@@ -86,7 +81,4 @@ ConsequencesCard.propTypes = {
         }).isRequired
     }).isRequired
 };
-
-
-
 export default ConsequencesCard;
