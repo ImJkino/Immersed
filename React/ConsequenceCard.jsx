@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import {Card, Image, Col, Modal} from "react-bootstrap"
-// import {Link} from "react-router-dom"
 import PropTypes from "prop-types";
 import "./consequence.css";
 const _logger = debug.extend("consPage");
@@ -74,7 +73,7 @@ ConsequencesCard.propTypes = {
     onEditClicked: PropTypes.func,
     currentUser: PropTypes.shape({
         currentUser:PropTypes.shape({
-            id: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired,
         }).isRequired
     }).isRequired
 };
