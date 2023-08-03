@@ -25,7 +25,6 @@ function ConsequenceAddEdit() {
 
   const { state } = useLocation();
   const navigate = useNavigate();
-  _logger("State----->", state);
 
   useEffect(() => {
     zonesService
@@ -49,8 +48,7 @@ function ConsequenceAddEdit() {
   }, [state]);
 
   const handleSubmit = (values, { resetForm }) => {
-    _logger("Handle Submit Paylod------>", values);
-    if (payload.id) {
+      if (payload.id) {
       const formUpdateData = {
         id: values.id,
         name: values.name,
@@ -59,7 +57,6 @@ function ConsequenceAddEdit() {
         actorId: values.actorId,
         zoneId: values.zoneId,
       };
-      _logger("FormUpdatedata----->", formUpdateData);
       consequenceService
         .updateConsequence(values.id, formUpdateData)
         .then(onUpdateSuccess)
@@ -81,23 +78,19 @@ function ConsequenceAddEdit() {
   };
 
   const onUpdateSuccess = (response) => {
-    _logger("Success response------>", response);
     toastr.success("Update Successful!");
     navigate("/consequences");
   };
   const onUpdateError = (response) => {
-    _logger("Error response------>", response);
     toastr.error("Update Failed.");
   };
 
   const onAddSuccess = (response) => {
-    _logger("Success response------>", response);
     toastr.success("Post Successful!");
     navigate("/consequences");
   };
 
   const onAddError = (response) => {
-    _logger("Error response------>", response);
     toastr.error("Post Failed.");
   };
 
@@ -123,13 +116,8 @@ function ConsequenceAddEdit() {
     setPayload((prevState) => {
       let pd = { ...prevState };
       pd.zoneComponents = zoneData.map(mapZone);
-      _logger("Pd ------->", pd);
       return pd;
     });
-  };
-
-  const onGetZoneError = (response) => {
-    _logger("GetZoneError ------->", response);
   };
 
   const mapZone = (aZone) => {
