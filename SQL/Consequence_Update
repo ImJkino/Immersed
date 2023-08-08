@@ -46,15 +46,15 @@ BEGIN
 	UPDATE [dbo].[Consequences]
 
     SET    [Name] = @Name
-	  ,[Description] = @Description
-	  ,[ConsequenceTypeId] = @ConsequenceTypeId
-	  ,[ActorId] = @ActorId
-	  ,[ZoneId] = @ZoneId
-	  ,[isActive] = @isActive
-	  ,[isDeleted] = @isDeleted
-	  ,[CreatedBy] = @CreatedBy
-	  ,[ModifiedBy] = @ModifiedBy
-	  ,[DateModified] = GETUTCDATE()
+  ,[Description] = @Description
+  ,[ConsequenceTypeId] = @ConsequenceTypeId
+  ,[ActorId] = @ActorId
+  ,[ZoneId] = @ZoneId
+  ,[isActive] = @isActive
+  ,[isDeleted] = @isDeleted
+  ,[CreatedBy] = @CreatedBy
+  ,[ModifiedBy] = @ModifiedBy
+  ,[DateModified] = GETUTCDATE()
 
 	WHERE Id = @Id
 END
