@@ -28,16 +28,16 @@ Declare  @Id int = 2
         ,@ModifiedBy int = 8
 
 EXECUTE dbo.Consequences_Update 
-		 @Id
-		,@Name 
-		,@Description 
-		,@ConsequenceTypeId 
-		,@ActorId 
-		,@ZoneId 
-		,@isActive 
-		,@isDeleted 
-		,@CreatedBy 
-		,@ModifiedBy 					   
+	 @Id
+	,@Name 
+	,@Description 
+	,@ConsequenceTypeId 
+	,@ActorId 
+	,@ZoneId 
+	,@isActive 
+	,@isDeleted 
+	,@CreatedBy 
+	,@ModifiedBy 					   
 
 */
 
