@@ -12,8 +12,6 @@ function Trainee(props) {
         traineeComponent: []
     });
 
-
-
     useEffect(() => {
         traineesService.getTraineesByUserId(userId).then(onGetTraineeByUserSuccess).catch(onGetTraineeByUserError);
     }, [])
@@ -34,8 +32,6 @@ function Trainee(props) {
     const onGetTraineeByUserError = () => {
         toastr.error("Error Getting Trainees")
     }
-
-
 
     return (
         <Fragment>
