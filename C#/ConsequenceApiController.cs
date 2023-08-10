@@ -1,17 +1,3 @@
-﻿using Amazon.Runtime.Internal.Util;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Models;
-using Models.Domain.Consequences;
-using Models.Requests.Consequences;
-using Services;
-using Web.Controllers;
-using Web.Models.Responses;
-using System;
-using System.Collections.Generic;
-
 namespace Web.Api.Controllers
 {
     [Route("api/consequences")]
