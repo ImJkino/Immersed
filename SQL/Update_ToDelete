@@ -7,7 +7,7 @@ AS
 	DECLARE @Id int = 4
 
 	Execute dbo.Consequences_Update_IsDelete_ById 
-	      @Id
+	@Id
 
 */
 
