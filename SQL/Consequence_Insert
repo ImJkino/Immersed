@@ -8,7 +8,6 @@ ALTER PROC [dbo].[Consequences_Insert]
            ,@ModifiedBy int
 	   ,@Id int OUTPUT
 
-
 AS
 
 /*
