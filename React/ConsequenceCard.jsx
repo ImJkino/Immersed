@@ -2,7 +2,6 @@ import React, { Fragment, useState } from "react";
 import {Card, Image, Col, Modal} from "react-bootstrap"
 import PropTypes from "prop-types";
 import "./consequence.css";
-const _logger = debug.extend("consPage");
 
 function ConsequencesCard (props){  
 
