@@ -10,11 +10,9 @@ ALTER PROC [dbo].[Consequences_Update]
         ,@CreatedBy int
         ,@ModifiedBy int
 		   
-
 as 
 
 /*---TEST CODE ----
-
 
 Declare  @Id int = 2
 	,@Name nvarchar(100) = 'this is a test_update2'
@@ -45,16 +43,16 @@ BEGIN
 
 	UPDATE [dbo].[Consequences]
 
-    SET    [Name] = @Name
-  ,[Description] = @Description
-  ,[ConsequenceTypeId] = @ConsequenceTypeId
-  ,[ActorId] = @ActorId
-  ,[ZoneId] = @ZoneId
-  ,[isActive] = @isActive
-  ,[isDeleted] = @isDeleted
-  ,[CreatedBy] = @CreatedBy
-  ,[ModifiedBy] = @ModifiedBy
-  ,[DateModified] = GETUTCDATE()
+    SET [Name] = @Name
+  	,[Description] = @Description
+  	,[ConsequenceTypeId] = @ConsequenceTypeId
+  	,[ActorId] = @ActorId
+  	,[ZoneId] = @ZoneId
+  	,[isActive] = @isActive
+  	,[isDeleted] = @isDeleted
+  	,[CreatedBy] = @CreatedBy
+  	,[ModifiedBy] = @ModifiedBy
+  	,[DateModified] = GETUTCDATE()
 
 	WHERE Id = @Id
 END
