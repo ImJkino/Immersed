@@ -1,5 +1,5 @@
-ALTER PROC	[dbo].[Consequences_Update_IsDelete_ById]
-		   @Id int
+ALTER PROC [dbo].[Consequences_Update_IsDelete_ById]
+	@Id int
 AS
 
 /* ----Test Code -----
@@ -13,12 +13,12 @@ AS
 
 BEGIN
 
-   UPDATE [dbo].[Consequences]
+   	UPDATE [dbo].[Consequences]
 
-   SET 
-	  [isDeleted] = 1
-	 ,[DateModified] = GETUTCDATE()
+SET 
+   	[isDeleted] = 1
+  	,[DateModified] = GETUTCDATE()
 
-   WHERE  Id = @Id
+WHERE  Id = @Id
 
- END
+END
