@@ -18,9 +18,9 @@ BEGIN
 		,Organizations =
 		(
 		SELECT
-		o.Id
-		,Roles =
-		(
+			o.Id
+			,Roles =
+			(
 		SELECT	r.Name
 		FROM	dbo.Roles as r
 		INNER JOIN dbo.UserOrgRoles as uor
@@ -40,7 +40,7 @@ BEGIN
 		SELECT t.id
 		FROM dbo.Trainees as t
 		WHERE u.Id = t.UserId
-			AND t.TraineeStatusId = 1
+		AND t.TraineeStatusId = 1
 		FOR JSON AUTO
 		)
 	FROM	[dbo].[Users] as u
