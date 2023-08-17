@@ -13,9 +13,6 @@ import NoReportsCard from "./NoReportCard";
 import rescueService from "services/rescueService";
 import "./traceabilityeventcard.css"
 
-
-const _logger = debug.extend("trace");
-
 const tableName = ["TrainingStatus"];
 
 function Traceability(props) {
@@ -49,12 +46,10 @@ function Traceability(props) {
     };
 
     const onGetUnitError = (response) => {
-        _logger("UnitError---->", response)
         toastr.error("Get Unit Failed")
     };
 
     const onLookUpError = (response) => {
-        _logger("lookError----->", response)
         toastr.error("Lookup Failed")
     };
 
@@ -88,11 +83,8 @@ function Traceability(props) {
     };
 
     const onGetByUnitError = (response) => {
-        _logger("Get Unit Failed----->", response);
         toastr.error("Get Unit Failed");
     }
-
-
 
     const mapTrainingUnit = (aUnit) => {
         return (<option key={aUnit.id} value={aUnit.id}>{aUnit.name}</option>)
@@ -100,7 +92,6 @@ function Traceability(props) {
 
     const onGetByUnitSuccess = (response) => {
         const trainee = response.items
-        _logger("TraineeByUnit----->", trainee)
         setTraineeData((prevState) => {
             const pd = { ...prevState };
             pd.traineeComponent = trainee.map(mapTrainees)
@@ -113,12 +104,10 @@ function Traceability(props) {
     };
 
     const onReportsclicked = (trainee) => {
-        _logger("ParentTraceabilityClicked---->", trainee)
         rescueService.getReportByTraineeId(pageData.pageIndex - 1, pageData.pageSize, trainee.id).then(onReportSuccess).catch(onReportError);
     };
 
     const onReportError = (response) => {
-        _logger("Get Report Failed----->", response);
         toastr.error("No Reports")
         var report = [{
             image: "https://tinyurl.com/2hwf4stz"
