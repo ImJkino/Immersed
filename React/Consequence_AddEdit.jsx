@@ -9,7 +9,6 @@ import zonesService from "services/zonesServices";
 import lookUpService from "services/lookUpService";
 import consequencesSchema from "../../schemas/consequencesSchema";
 
-const _logger = debug.extend("Addedit");
 let tableName = ["consequenceTypes"];
 
 function ConsequenceAddEdit() {
