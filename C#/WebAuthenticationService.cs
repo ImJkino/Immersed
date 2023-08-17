@@ -1,8 +1,8 @@
 public async Task LogInAsync(IUserAuthData user, params Claim[] extraClaims)
         {
             ClaimsIdentity identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme
-                                                            , ClaimsIdentity.DefaultNameClaimType
-                                                            , ClaimsIdentity.DefaultRoleClaimType);
+                                , ClaimsIdentity.DefaultNameClaimType
+                                , ClaimsIdentity.DefaultRoleClaimType);
 
             identity.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider"
                                 , _title
@@ -12,7 +12,6 @@ public async Task LogInAsync(IUserAuthData user, params Claim[] extraClaims)
 
             identity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Name, ClaimValueTypes.String));
             
-            ...
             
             if (user.Trainees != null && user.Trainees.Any())
             {
@@ -20,9 +19,7 @@ public async Task LogInAsync(IUserAuthData user, params Claim[] extraClaims)
                 {
                     identity.AddClaim(new Claim("Trainees", trainee.ToString(), ClaimValueTypes.String));
                 }
-            }
-            
-            ...
+            }          
             
             private static UserBase ExtractUser(ClaimsIdentity identity)
         {
@@ -32,9 +29,6 @@ public async Task LogInAsync(IUserAuthData user, params Claim[] extraClaims)
             List<int> trainees = null;
 
             foreach (var claim in identity.Claims)
-            
-            
-            ...
             
              case "CurrentTrainee":
                         baseUser.CurrentTraineeId = Int32.Parse(claim.Value);
@@ -48,10 +42,6 @@ public async Task LogInAsync(IUserAuthData user, params Claim[] extraClaims)
                         trainees.Add(Int32.Parse(claim.Value));
                         break;
                         
-          ...
-          
-          
            baseUser.Trainees = trainees;
 
             return baseUser;
-          
