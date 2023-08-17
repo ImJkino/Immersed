@@ -7,8 +7,6 @@ import 'rc-pagination/assets/index.css';
 import locale from "rc-pagination/lib/locale/en_US"
 import Pagination from "rc-pagination";
 
-const _logger = debug.extend("consPage");
-
 function ConsequencesPage (props){
     const[pageData, setPageData] = useState({
         pageIndex: 1,
