@@ -3,12 +3,7 @@ import { ListGroup } from "react-bootstrap";
 import PropTypes from "prop-types"
 import "./traceabilityeventcard.css";
 
-const _logger = debug.extend("eventsard")
-
-
 function ReportsCard(props) {
-
-    _logger("EventsCardProps---->", props)
 
     const report = props.report;
 
