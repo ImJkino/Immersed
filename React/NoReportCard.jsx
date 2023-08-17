@@ -4,15 +4,10 @@ import "./traceabilityeventcard.css";
 import PropTypes from "prop-types";
 import "./traceabilityeventcard.css";
 
-const _logger = debug.extend("reportcard")
-
-
 function NoReportsCard(props) {
 
     _logger("NoReportsCardProps---->", props)
     let image = props.report.image;
-
-
 
     return (
         <Fragment>
@@ -28,6 +23,5 @@ NoReportsCard.propTypes = {
         title: PropTypes.string.isRequired
     })
 };
-
 
 export default NoReportsCard;
