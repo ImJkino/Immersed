@@ -16,7 +16,7 @@ BEGIN
 		,u.[Email]
 		,u.[Password]
 		,Organizations =
-		(
+			(
 		SELECT
 			o.Id
 			,Roles =
