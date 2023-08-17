@@ -39,14 +39,14 @@ function ConsequencesCard (props){
             backdrop="static"
             keyboard={false}
             >
-                <Modal.Header closeButton >
-                    <Modal.Title>Consequence Details</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>Actor: {aCons.actorId.name}</p>
-                    <p>Zone: {aCons.zoneId.name}</p>
-                    <p>Description: {aCons.description}</p>
-                </Modal.Body>
+            <Modal.Header closeButton >
+                <Modal.Title>Consequence Details</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <p>Actor: {aCons.actorId.name}</p>
+                <p>Zone: {aCons.zoneId.name}</p>
+                <p>Description: {aCons.description}</p>
+            </Modal.Body>
             </Modal>
         </Fragment>
     )
