@@ -16,24 +16,24 @@ BEGIN
 		,u.[Email]
 		,u.[Password]
 		,Organizations =
-		(
-		SELECT  o.Id
-			,Roles =
 			(
-			SELECT	r.Name
-			FROM	dbo.Roles as r
+			SELECT  o.Id
+				,Roles =
+					(
+					SELECT	r.Name
+					FROM	dbo.Roles as r
+					INNER JOIN dbo.UserOrgRoles as uor
+					ON r.Id = uor.RoleId
+					WHERE	UserId = u.Id
+					AND o.Id = uor.OrgId
+					FOR JSON AUTO
+					)
+			FROM	dbo.Organizations as o
 			INNER JOIN dbo.UserOrgRoles as uor
-			ON r.Id = uor.RoleId
+			ON o.Id = uor.OrgId
 			WHERE	UserId = u.Id
-			AND o.Id = uor.OrgId
 			FOR JSON AUTO
 			)
-		FROM	dbo.Organizations as o
-		INNER JOIN dbo.UserOrgRoles as uor
-		ON o.Id = uor.OrgId
-		WHERE	UserId = u.Id
-		FOR JSON AUTO
-		)
 		,Trainees = 
 			(
 			SELECT t.id
