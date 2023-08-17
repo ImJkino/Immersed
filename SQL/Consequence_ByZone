@@ -9,8 +9,7 @@ Declare @ZoneId int = 3
 	 
 		
 Execute dbo.Consequence_Select_ByZoneId 
-		@ZoneId
-	   				
+		@ZoneId	   				
 
 */
 BEGIN
